@@ -6,6 +6,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Push;
 
 namespace App1.Droid
 {
@@ -20,6 +24,7 @@ namespace App1.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            AppCenter.Configure("9baaeb24-8e12-462e-bb35-c1eb3b59721e");
             LoadApplication(new App());
         }
     }

@@ -2,6 +2,10 @@
 using Xamarin.Forms;
 using App1.Views;
 using Xamarin.Forms.Xaml;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Push;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace App1
@@ -13,8 +17,9 @@ namespace App1
 		{
 			InitializeComponent();
 
+            AppCenter.Start(typeof(Analytics), typeof(Crashes), typeof(Push));
 
-			MainPage = new MainPage();
+            MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()
